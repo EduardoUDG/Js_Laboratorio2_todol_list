@@ -1,0 +1,9 @@
+html, body {
+    margin: 0;
+    background-color: red;
+}
+
+img {
+    display: block;
+    width: 150px;
+}
