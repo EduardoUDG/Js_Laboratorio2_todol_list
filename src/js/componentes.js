@@ -1,21 +1,26 @@
-import '../css/componentes.css'
-import webpacklogo from '../assets/img/webpack-logo.png';
+const divTodolist = document.querySelector('.todo-list');
 
-const saludar = ( nombre ) => {
-    console.log('Creando etiqueta h1');
-    const h1 = document.createElement('h1');
-    h1.innerText = `Hola, ${ nombre }`;
-    document.body.append( h1 );
 
-    //? img
-    // console.log( webpacklogo )
-    // const img = document.createElement('img');
-    // img.src = webpacklogo;
-    // document.body.append( img );
+export const crearTodoHtml = ( todo ) => {
+
+    const status    = (todo.completado) ? 'completed' : '';
+    const checked   = (todo.completado) ? 'checked' : '';
+
+    const htmlTodo = `
+    <li class="${ status }" data-id="${ todo.id }">
+            <div class="view">
+                <input class="toggle" type="checkbox" ${ checked }>
+                <label>${ todo.tarea }</label>
+                <button class="destroy"></button>
+            </div>
+            <input class="edit" value="Create a TodoMVC template">
+    </li>`;
+
+    const div = document.createElement('div');
+    div.innerHTML = htmlTodo;
+
+    divTodolist.append( div.firstElementChild );
+    return div.firstElementChild;
 }
 
 
-
-export {
-    saludar,
-}
