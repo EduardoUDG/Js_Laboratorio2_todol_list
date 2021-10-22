@@ -4,6 +4,7 @@ import { todoList } from '../index'
 
 const divTodolist   = document.querySelector('.todo-list');
 const txtInput      = document.querySelector('.new-todo');
+const btnBorrar     = document.querySelector('.clear-completed');
 
 export const crearTodoHtml = ( todo ) => {
 
@@ -61,6 +62,20 @@ divTodolist.addEventListener('click', event => {
         todoList.eliminarTodo( todoId );
         divTodolist.removeChild( todoElemento );
     }
-
     
+});
+
+
+btnBorrar.addEventListener('click', () => {
+
+    todoList.eliminarCompletados();
+
+    for( let i = divTodolist.children.length-1; i >= 0; i--) {
+
+        const elemento = divTodolist.children[i];
+
+        if ( elemento.classList.contains('completed') ) {
+            divTodolist.removeChild( elemento );
+        }
+    }
 });
