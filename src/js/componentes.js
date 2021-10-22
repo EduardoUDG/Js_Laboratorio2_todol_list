@@ -56,8 +56,11 @@ divTodolist.addEventListener('click', event => {
     if( nombreElemento.includes('input') ) { // click en check
         todoList.marcarCompletado( todoId );
         todoElemento.classList.toggle('completed');
+
+    } else if( nombreElemento.includes('button') ) { // click en check
+        todoList.eliminarTodo( todoId );
+        divTodolist.removeChild( todoElemento );
     }
 
-    console.log(todoList  );
     
 });
