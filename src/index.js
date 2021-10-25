@@ -9,13 +9,11 @@ export const todoList = new TodoList();
 // todoList.nuevoTodo( tarea );
 // crearTodoHtml( tarea );
 
-
+todoList.todos.forEach( crearTodoHtml );
 
 
 
 // localStorage.setItem('my-key', 'ABC123');
-
-
 // setTimeout(() => {
 //   localStorage.removeItem('my-key')
 // }, 1500);
