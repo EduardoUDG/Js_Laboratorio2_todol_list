@@ -40,7 +40,7 @@ txtInput.addEventListener('keyup', (event)=> {
         const nuevoTodo = new Todo( txtInput.value );
         todoList.nuevoTodo( nuevoTodo );
 
-        console.log(todoList);
+        // console.log(todoList);
         crearTodoHtml( nuevoTodo );
         txtInput.value = '';
     }
